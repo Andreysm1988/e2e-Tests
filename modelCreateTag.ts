@@ -1,10 +1,9 @@
 import { Selector, t } from 'testcafe';
 
-
-export default class CreateTag {
+export default class CreateTag {  
     navMenuTSDS: any;
-    navSettingApp: any
-    navSettingTSDS: any;
+    navSettingApp: any 
+    navSettingTSDS: any; 
     navCreateTag: any;
     addNewTag: any;
     nameTag: any;
@@ -30,23 +29,20 @@ export default class CreateTag {
 
         //Путь к добавленному тегу
         this.tableTags = Selector('body > app-root > app-system > div > div.mainContent > div.container.fill > mat-sidenav-container > mat-sidenav-content > app-tag-menu > div > div.content > app-tag-create > div > div.view > div > table > tbody > tr > td.mat-cell.cdk-column-name.mat-column-name.ng-star-inserted');
-
-
-
     }
 
     async startCreateTag() {
-      await t
+        await t
             .click(this.navMenuTSDS)
             .click(this.navSettingApp)
             .click(this.navSettingTSDS)
             .click(this.navCreateTag)
             .click(this.addNewTag)
-            .typeText(this.nameTag, 'TagTest123')
+            .typeText(this.nameTag, 'TagTest')
             .click(this.typeTag)
             .click(this.typeTagSelect)
             .typeText(this.descriptionTag, 'Описание 1')
             .click(this.saveAddNewTag)
-            .expect(this.tableTags.innerText).eql('TagTest123');
+            .expect(this.tableTags.innerText).eql('TagTest');
     }
 }
