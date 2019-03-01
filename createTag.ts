@@ -14,8 +14,4 @@ test('CreateTag', async t => {
   await window.windowsSizeBrowser();
   await pageAuth.startAuthorization();
   await createNewTag.startCreateTag();
-  await deleteTag.startDeleteTag();
 });
-
-
-
